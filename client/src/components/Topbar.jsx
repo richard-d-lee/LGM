@@ -13,7 +13,7 @@ function Topbar(props) {
                 <label className="register" onClick={() => {props.change("register")}}>
                     register
                 </label>
-                <label className="login" onClick={() => {props.change("login")}}>
+                <label className="login-text" onClick={() => {props.change("login")}}>
                     login
                 </label>
             </div>
