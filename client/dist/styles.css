@@ -1,11 +1,23 @@
 .banner {
   padding: 25px;
   font-size: xx-large;
+  text-decoration: none;
+  color: black;
 }
 
 body {
   margin: 0px;
   background-color: burlywood;
+}
+
+#center-flex {
+  margin: 40px;
+  width: 50%;
+  border: 3px solid green;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  background-color: darkolivegreen !important;
 }
 
 #login-page {
@@ -108,6 +120,7 @@ body {
 .text-field {
   height: 15px;
   resize: none;
+  margin: 15px;
 }
 
 .topbar {
@@ -115,6 +128,12 @@ body {
   flex-direction: row;
   justify-content: space-between;
   background-color: bisque;
+}
+
+#username-text {
+  color: white;
+  white-space: nowrap;
+  margin-left: 15px;
 }
 
 #main {
