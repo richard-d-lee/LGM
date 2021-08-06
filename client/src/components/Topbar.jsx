@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar.jsx';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 function Topbar(props) {
     console.log(props)
@@ -10,12 +16,12 @@ function Topbar(props) {
                 Welcome to Lee Gaming and Media!
             </div>
             <div className="portal">
-                <label className="register" onClick={() => {props.change("register")}}>
+            <Link to="/register" className="register">
                     register
-                </label>
-                <label className="login-text" onClick={() => {props.change("login")}}>
+                </Link>
+                <Link to="/login" className="login-text">
                     login
-                </label>
+                </Link>
             </div>
         </div>
     )
