@@ -51,13 +51,13 @@ class App extends React.Component {
                         </Route>
                         <Route path="/crispyscollections">
                             <div>
-                            <Topbar open={this.openNav} close={this.closeNav} change={this.pageChange} />
+                                <Topbar open={this.openNav} close={this.closeNav} change={this.pageChange} />
                                 <Content page={this.state.page} />
                             </div>
                         </Route>
                         <Route path="/simulationstation">
                             <div>
-                            <Topbar open={this.openNav} close={this.closeNav} change={this.pageChange} />
+                                <Topbar open={this.openNav} close={this.closeNav} change={this.pageChange} />
                                 <Content page={this.state.page} />
                             </div>
                         </Route>
