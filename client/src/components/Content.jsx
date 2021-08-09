@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Login from './Login.jsx';
+import createVideos from '../helpers/iframes.jsx';
+
 
 function Content(props) {
     if (props.page === "login" || props.page === "register") {
@@ -7,11 +9,7 @@ function Content(props) {
     } else {
         return (
             <div>
-                <div>
-                    {
-                        //streaming info/links
-                    }
-                </div>
+                {createVideos()}
                 <div>
                     {
                         //row for above, column for below
@@ -22,7 +20,7 @@ function Content(props) {
                         }
                     </div>
                     <div>
-                        {  
+                        {
                             //old content
                         }
                     </div>

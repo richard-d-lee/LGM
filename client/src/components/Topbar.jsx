@@ -14,14 +14,14 @@ function Topbar(props) {
             <Sidebar open={props.open} close={props.close} />
             <Link to="/" className="banner">
                     Welcome to Lee Gaming and Media!
-                </Link>
+            </Link>
             <div className="portal">
-                <Link to="/register" className="register">
+            <Link to="/register" className="register">
                     register
-                </Link>
-                <Link to="/login" className="login-text">
+            </Link>
+            <Link to="/login" className="login-text">
                     login
-                </Link>
+            </Link>
             </div>
         </div>
     )
