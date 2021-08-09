@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
   margin-top: 40px;
 }
 
@@ -28,12 +27,35 @@ body {
   background-color: darkolivegreen !important;
 }
 
+#comment-button {
+  align-self: center;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+#description-text {
+  text-align: center;
+}
+
+.flex-description {
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  justify-content: center;
+  border: 3px solid darkolivegreen;
+  border-radius: 40px;
+  background-color: darkseagreen;
+}
+
 .flex-video {
-  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 #login-page {
-  border: 1px solid red;
+  border: 3px solid darkolivegreen;
+  border-radius: 40px;
   background-color: darkseagreen;
   width: 500px;
   margin: 100px 0px 0px 0px;
@@ -150,6 +172,11 @@ body {
 
 .video {
   margin: 30px;
+}
+
+.video-title {
+  text-align: center;
+  margin-bottom: 0px;
 }
 
 #main {

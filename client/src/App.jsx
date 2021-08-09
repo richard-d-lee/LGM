@@ -49,6 +49,18 @@ class App extends React.Component {
                                 <Content page={"register"} />
                             </div>
                         </Route>
+                        <Route path="/crispyscollections">
+                            <div>
+                            <Topbar open={this.openNav} close={this.closeNav} change={this.pageChange} />
+                                <Content page={this.state.page} />
+                            </div>
+                        </Route>
+                        <Route path="/simulationstation">
+                            <div>
+                            <Topbar open={this.openNav} close={this.closeNav} change={this.pageChange} />
+                                <Content page={this.state.page} />
+                            </div>
+                        </Route>
                         <Route path="/">
                             <div>
                                 <Topbar open={this.openNav} close={this.closeNav} change={this.pageChange} />
@@ -61,8 +73,5 @@ class App extends React.Component {
         );
     }
 }
-function Users() {
-    return <h2>Users</h2>;
-  }
-  
+
 export default App;
