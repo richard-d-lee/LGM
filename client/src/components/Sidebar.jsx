@@ -13,10 +13,10 @@ function Sidebar(props) {
         <a href="javascript:void(0)" className="closebtn" onClick={props.close}>&times;</a>
         <a href="/">Artwork</a>
         <a href="#">Reviews</a>
-        <Link to="/simulationstation" className="banner">
+        <Link to="/simulationstation">
                     Simulation Station Podcast
         </Link>
-        <Link to="/crispyscollections" className="banner">
+        <Link to="/crispyscollections">
                     Crispy's Collections
         </Link>
         <a href="#">S/D/S</a>

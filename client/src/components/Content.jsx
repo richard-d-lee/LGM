@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Login from './Login.jsx';
-import createVideos from '../helpers/iframes.jsx';
-import Videos from '../helpers/iframes.jsx';
+import Videos from './Videos.jsx';
 
 
 function Content(props) {

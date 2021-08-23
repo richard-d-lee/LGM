@@ -10,6 +10,7 @@
   font-size: xx-large;
   text-decoration: none;
   color: black;
+  text-align: center;
 }
 
 body {
@@ -171,6 +172,7 @@ body {
 }
 
 .video {
+  border-radius: 50px;
   margin: 30px;
 }
 
