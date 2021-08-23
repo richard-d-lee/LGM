@@ -1,5 +1,17 @@
 const myVideos = [
     {
+        title: "MHII Collector's Pack",
+        url: "https://www.youtube.com/embed/SPtQziXKwlo",
+        description: "Our review of Borderlands!",
+        class: "crispy"
+    },
+    {
+        title: "Rise of Skywalker",
+        url: "https://www.youtube.com/embed/jb0vdI4Gtjo",
+        description: "Did the final episode of the Star Wars saga live up to Joey's expectations?",
+        class: "crispy"
+    },
+    {
         title: "Borderlands",
         url: "https://www.youtube.com/embed/HpSZAKJ294M",
         description: "Our review of Borderlands!",
@@ -12,10 +24,28 @@ const myVideos = [
         class: "crispy"
     },
     {
+        title: "Simulation Station #2",
+        url: "https://www.youtube.com/embed/CJNeoCvNZMg",
+        description: "In this one we talk about more things! I think canoeing and basketball?",
+        class: "simstat"
+    },
+    {
         title: "Ready Player One",
         url: "https://www.youtube.com/embed/VSLcoFXYz4s",
         description: "A nerd reviewing a nerd book on a nerd website.",
         class: "crispy"
+    },
+    {
+        title: "Modern Horizons 2",
+        url: "https://www.youtube.com/embed/SPtQziXKwlo",
+        description: "Can Joey find some excellent commander pulls?",
+        class: "crispy"
+    },
+    {
+        title: "Simulation Station #1",
+        url: "https://www.youtube.com/embed/YhHI6ulTxfk",
+        description: "What did we talk about? I can't remember so tune in and find out!",
+        class: "simstat"
     },
     {
         title: "Resident Evil 4",
