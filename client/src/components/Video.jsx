@@ -9,7 +9,7 @@ function Video(props) {
                 <p id="description-text">{props.description}</p>
                 <button id="comment-button">Comment</button>
             </div>
-            <iframe width="560" className="video" height="315" src={props.url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            <iframe width="560" className="video" height="315" src={props.url} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
             </iframe>
         </div>
     )
