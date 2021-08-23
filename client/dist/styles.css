@@ -45,6 +45,7 @@ body {
   height: 75px;
   margin-bottom: 50px;
   border-radius: 25px;
+  margin-top: 50px;
 }
 
 .flex-description {
@@ -213,9 +214,6 @@ body {
   }
   .all-videos {
     margin-top: 0px;
-  }
-  #extend-button {
-    margin-top: 50px;
   }
   .video {
     border-radius: 30px;
