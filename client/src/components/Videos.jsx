@@ -16,7 +16,7 @@ const Videos = (props) => {
                         description={video.description}
                     ></Video>
                 })}
-                <button onClick={() => setCount(2)}>See More</button>
+                <button id="extend-button" onClick={() => setCount(2)}>See More</button>
             </div>
         );
     } else {
@@ -30,7 +30,6 @@ const Videos = (props) => {
                         description={video.description}
                     ></Video>
                 })}
-                <button onClick={() => setCount(2)}>See More</button>
             </div>
         );
     }
