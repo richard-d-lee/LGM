@@ -16,7 +16,7 @@ app.get('/*', function(req, res) {
   })
 
 // Listening for requests on the PORT
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
     console.log('Serving up now at ' + JSON.stringify(PORT))
 });
 
