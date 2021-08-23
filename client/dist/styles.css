@@ -61,10 +61,12 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  border-bottom: 5px double darkolivegreen;
+
 }
 
 #login-page {
-  border: 3px solid darkolivegreen;
+  border: 5px double darkolivegreen;
   border-radius: 40px;
   background-color: darkseagreen;
   width: 500px;
@@ -168,6 +170,7 @@ body {
 }
 
 .topbar {
+  border-bottom: 5px double darkolivegreen;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -183,6 +186,7 @@ body {
 .video {
   border-radius: 20px;
   margin: 30px;
+  
 }
 
 .video-title {
@@ -203,10 +207,17 @@ body {
 
 @media screen and (max-width: 1000px) {
   .flex-video {
-    padding-top: 20px;
+    padding-top: 30px;
     flex-direction: column;
+    border-bottom: 5px double darkolivegreen;
+  }
+  .all-videos {
+    margin-top: 0px;
+  }
+  #extend-button {
+    margin-top: 50px;
   }
   .video {
-    padding: 40px 0px 40px 0px;
+    border-radius: 30px;
   }
 }
