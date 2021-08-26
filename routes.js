@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const { useParams } = require('react-router-dom');
 mongoose.connect('mongodb://localhost:27017/users');
 const bp = require('body-parser')
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+const myPlaintextPassword = 's0/\/\P4$$w0rD';
+const someOtherPlaintextPassword = 'not_bacon';
 
 const User = mongoose.model('User', {
     username: String,
@@ -15,16 +19,17 @@ module.exports = function (app) {
     app.post('/loginUser', function (req, res) {
         console.log(req.body.password)
         User.findOne({ username: req.body.username }).then((data) => {
-            console.log(data.password)
             if (!data) {
                 res.send('badUser')
-            } else if (data.password === req.body.password) {
-                console.log(data.password)
-                res.send('success')
-            } else {
-                res.send("incorrect")
             }
-
+            bcrypt.compare(req.body.password, data.password, function (err, result) {
+                // result == true
+                if (result === true) {
+                    res.send('success')
+                } else {
+                    res.send("incorrect")
+                }
+            });
         })
     });
 
@@ -32,12 +37,14 @@ module.exports = function (app) {
         console.log(req.body)
         User.findOne({ username: req.body.username }).then((data) => {
             if (!data) {
-                let newUser = new User({
-                    username: req.body.username,
-                    password: req.body.password,
-                    comments: []
-                })
-                newUser.save().then(res.send('saved'))
+                bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
+                    let newUser = new User({
+                        username: req.body.username,
+                        password: hash,
+                        comments: []
+                    })
+                    newUser.save().then(res.send('saved'))
+                });
             } else {
                 res.send('exists')
             }

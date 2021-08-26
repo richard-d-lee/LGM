@@ -30,13 +30,12 @@ let loginClick = (e) => {
         password: password,
     }
     axios.post('/loginUser', apiObj).then((data) => {
-        console.log(data.data)
         if (data.data === 'badUser') {
             alert("Username does not exist!")
         } else if (data.data === "success") {
             alert("You are now logged in!")
         } else if (data.data === "incorrect") {
-            alert("Incorrect password!")
+            alert("Incorrect  password!")
         }
     })
 }
