@@ -1,6 +1,11 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 let registerClick = (e) => {
+    let allFields = document.querySelectorAll('.text-field');
+    allFields.forEach((node) => {
+        console.log(node)
+        node.value = ""
+    })
     let username = e.target.previousSibling.previousSibling.previousSibling.lastChild.value
     let passOne = e.target.previousSibling.previousSibling.lastChild.value;
     let passTwo = e.target.previousSibling.lastChild.value;
@@ -23,6 +28,11 @@ let registerClick = (e) => {
 }
 
 let loginClick = (e) => {
+    let allFields = document.querySelectorAll('.text-field');
+    allFields.forEach((node) => {
+        console.log(node)
+        node.value = ""
+    })
     let username = e.target.previousSibling.previousSibling.lastChild.value
     let password = e.target.previousSibling.lastChild.value;
     let apiObj = {
