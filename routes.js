@@ -1,11 +1,16 @@
 const mongoose = require('mongoose');
 const { useParams } = require('react-router-dom');
-mongoose.connect('mongodb://localhost:27017/users');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/users',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  },
+);
 const bp = require('body-parser')
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-const myPlaintextPassword = 's0/\/\P4$$w0rD';
-const someOtherPlaintextPassword = 'not_bacon';
 
 const User = mongoose.model('User', {
     username: String,
