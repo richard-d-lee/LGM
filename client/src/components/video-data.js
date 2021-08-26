@@ -2,7 +2,7 @@ const myVideos = [
     {
         title: "MHII Collector's Pack",
         url: "https://www.youtube.com/embed/SPtQziXKwlo",
-        description: "Our review of Borderlands!",
+        description: "Joey and friends crack open a boat load of shiny cards! Check out the beautiful extended arts and foils.",
         class: "crispy"
     },
     {
