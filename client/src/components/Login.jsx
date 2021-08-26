@@ -27,11 +27,6 @@ let registerClick = (e) => {
 }
 
 let loginClick = (e) => {
-    let allFields = document.querySelectorAll('.text-field');
-    allFields.forEach((node) => {
-        console.log(node)
-        node.value = ""
-    })
     let username = e.target.previousSibling.previousSibling.lastChild.value
     let password = e.target.previousSibling.lastChild.value;
     let apiObj = {
