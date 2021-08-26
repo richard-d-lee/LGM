@@ -59,7 +59,6 @@ function Login(props) {
             if (data.data === 'badUser') {
                 alert("Username does not exist!")
             } else if (data.data === "success") {
-                alert("You are now logged in!")
                 props.setLogged(username)
             } else if (data.data === "incorrect") {
                 alert("Incorrect password!")
@@ -73,15 +72,15 @@ function Login(props) {
                 <div id="login-page">
                     <center id="center-flex">
                         <p id="username-text">username</p>
-                        <textarea placeholder="something clever" className="text-field"></textarea>
+                        <input placeholder="something clever" className="text-field"></input>
                     </center>
                     <center id="center-flex">
                         <p id="username-text">password</p>
-                        <textarea placeholder="more clever" className="text-field"></textarea>
+                        <input type="password" placeholder="more clever" className="text-field"></input>
                     </center>
                     <center id="center-flex">
                         <p id="username-text">re-enter</p>
-                        <textarea placeholder="more clever" className="text-field"></textarea>
+                        <input type="password" placeholder="even more clever" className="text-field"></input>
                     </center>
                     <button onClick={registerClick}>Submit</button>
                 </div>
@@ -92,11 +91,11 @@ function Login(props) {
             <div id="login-page">
                 <center id="center-flex">
                     <p id="username-text">username</p>
-                    <textarea placeholder="something clever" className="text-field"></textarea>
+                    <input placeholder="such coolness" className="text-field"></input>
                 </center>
                 <center id="center-flex">
                     <p id="username-text">password</p>
-                    <textarea placeholder="more clever" className="text-field"></textarea>
+                    <input type="password" placeholder="many characters" className="text-field"></input>
                 </center>
                 <Link to="/" onClick={loginClick}>
                     <button>Submit</button>
