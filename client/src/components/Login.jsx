@@ -1,11 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 let registerClick = (e) => {
-    let allFields = document.querySelectorAll('.text-field');
-    allFields.forEach((node) => {
-        console.log(node)
-        node.value = ""
-    })
     let username = e.target.previousSibling.previousSibling.previousSibling.lastChild.value
     let passOne = e.target.previousSibling.previousSibling.lastChild.value;
     let passTwo = e.target.previousSibling.lastChild.value;
@@ -22,9 +17,13 @@ let registerClick = (e) => {
             } else if (data.data === 'saved') {
                 alert(username + " is now registered! Log in to access features.")
             }
+            let allFields = document.querySelectorAll('.text-field');
+            allFields.forEach((node) => {
+                console.log(node)
+                node.value = ""
+            })
         })
     }
-    console.log(e)
 }
 
 let loginClick = (e) => {
@@ -47,6 +46,11 @@ let loginClick = (e) => {
         } else if (data.data === "incorrect") {
             alert("Incorrect  password!")
         }
+        let allFields = document.querySelectorAll('.text-field');
+        allFields.forEach((node) => {
+            console.log(node)
+            node.value = ""
+        })
     })
 }
 
