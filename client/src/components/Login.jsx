@@ -39,7 +39,7 @@ let loginClick = (e) => {
         } else if (data.data === "success") {
             alert("You are now logged in!")
         } else if (data.data === "incorrect") {
-            alert("Incorrect  password!")
+            alert("Incorrect password!")
         }
         let allFields = document.querySelectorAll('.text-field');
         allFields.forEach((node) => {
