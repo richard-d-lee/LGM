@@ -1,6 +1,21 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+
+
+let clearFields = () => {
+    let allFields = document.querySelectorAll('.text-field');
+    allFields.forEach((node) => {
+        node.value = ""
+    })
+}
 let registerClick = (e) => {
+    console.log(e)
     let username = e.target.previousSibling.previousSibling.previousSibling.lastChild.value
     let passOne = e.target.previousSibling.previousSibling.lastChild.value;
     let passTwo = e.target.previousSibling.lastChild.value;
@@ -10,46 +25,48 @@ let registerClick = (e) => {
     }
     if (passOne !== passTwo) {
         alert("Passwords do not match!")
-    } else {
+        clearFields()
+    } else if (passOne.length < 8) {
+        alert("Your password must be at least eight characters long.")
+        clearFields()
+        window.location = '/register'
+    }
+    else {
         axios.post('/registerUser', apiObj).then((data) => {
             if (data.data === 'exists') {
                 alert("Username already exists!")
             } else if (data.data === 'saved') {
                 alert(username + " is now registered! Log in to access features.")
             }
+            window.location = "/login";
             let allFields = document.querySelectorAll('.text-field');
             allFields.forEach((node) => {
-                console.log(node)
                 node.value = ""
             })
         })
     }
 }
 
-let loginClick = (e) => {
-    let username = e.target.previousSibling.previousSibling.lastChild.value
-    let password = e.target.previousSibling.lastChild.value;
-    let apiObj = {
-        username: username,
-        password: password,
-    }
-    axios.post('/loginUser', apiObj).then((data) => {
-        if (data.data === 'badUser') {
-            alert("Username does not exist!")
-        } else if (data.data === "success") {
-            alert("You are now logged in!")
-        } else if (data.data === "incorrect") {
-            alert("Incorrect password!")
-        }
-        let allFields = document.querySelectorAll('.text-field');
-        allFields.forEach((node) => {
-            console.log(node)
-            node.value = ""
-        })
-    })
-}
-
 function Login(props) {
+    let loginClick = (e) => {
+        let username = e.target.parentNode.previousSibling.previousSibling.lastChild.value
+        let password = e.target.parentNode.previousSibling.lastChild.value;
+        let apiObj = {
+            username: username,
+            password: password,
+        }
+        axios.post('/loginUser', apiObj).then((data) => {
+            if (data.data === 'badUser') {
+                alert("Username does not exist!")
+            } else if (data.data === "success") {
+                alert("You are now logged in!")
+                props.setLogged(username)
+            } else if (data.data === "incorrect") {
+                alert("Incorrect password!")
+            }
+            clearFields()
+        })
+    }
     if (props.page === "register") {
         return (
             <center>
@@ -81,7 +98,9 @@ function Login(props) {
                     <p id="username-text">password</p>
                     <textarea placeholder="more clever" className="text-field"></textarea>
                 </center>
-                <button onClick={loginClick}>Submit</button>
+                <Link to="/" onClick={loginClick}>
+                    <button>Submit</button>
+                </Link>
             </div>
         </center>
     )

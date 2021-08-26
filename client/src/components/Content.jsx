@@ -5,7 +5,7 @@ import Videos from './Videos.jsx';
 
 function Content(props) {
     if (props.page === "login" || props.page === "register") {
-        return (<Login page={props.page} />)
+        return (<Login setLogged={props.setLogged} page={props.page} />)
     } else if (props.extend === true) {
         return (
             <div>

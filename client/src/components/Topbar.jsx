@@ -7,21 +7,37 @@ import {
     Link
 } from "react-router-dom";
 
+
 function Topbar(props) {
-    console.log(props)
+    console.log(props.username)
+    let renderLogin = (state) => {
+        if (state === true) {
+            return (
+                <Link to="/" className="login-text">
+                    {props.username}
+                </Link>
+            )
+        } else {
+            return (
+                <div>
+                    <Link to="/register" className="register">
+                        register
+                    </Link>
+                    <Link to="/login" className="login-text">
+                        login
+                    </Link>
+                </div>
+            )
+        }
+    }
     return (
         <div className="topbar">
             <Sidebar open={props.open} close={props.close} />
             <Link to="/" className="banner">
-                    Welcome to Lee Gaming and Media!
+                Welcome to Lee Gaming and Media!
             </Link>
             <div className="portal">
-            <Link to="/register" className="register">
-                    register
-            </Link>
-            <Link to="/login" className="login-text">
-                    login
-            </Link>
+                {renderLogin(props.logged)}
             </div>
         </div>
     )

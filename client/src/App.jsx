@@ -13,11 +13,18 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            page: ""
+            username: '',
+            page: "home",
+            logged: false,
         }
+        this.setLogged = this.setLogged.bind(this)
         this.openNav = this.openNav.bind(this);
         this.closeNav = this.closeNav.bind(this);
         this.pageChange = this.pageChange.bind(this);
+    }
+
+    setLogged(name) {
+        this.setState({ logged: !this.state.logged, username: name })
     }
 
     pageChange(newPage) {
@@ -33,37 +40,38 @@ class App extends React.Component {
         document.getElementById("main").style.marginLeft = "0px";
     }
     render() {
+        console.log(this.state)
         return (
             <Router>
                 <div>
                     <Switch>
                         <Route path="/login">
                             <div>
-                                <Topbar open={this.openNav} close={this.closeNav} change={this.pageChange} />
-                                <Content page={"login"} />
+                                <Topbar username={this.state.username} logged={this.state.logged} open={this.openNav} close={this.closeNav} change={this.pageChange} />
+                                <Content setLogged={this.setLogged} page={"login"} />
                             </div>
                         </Route>
                         <Route path="/register">
                             <div>
-                                <Topbar open={this.openNav} close={this.closeNav} change={this.pageChange} />
+                                <Topbar username={this.state.username} logged={this.state.logged} open={this.openNav} close={this.closeNav} change={this.pageChange} />
                                 <Content page={"register"} />
                             </div>
                         </Route>
                         <Route path="/crispyscollections">
                             <div>
-                                <Topbar open={this.openNav} close={this.closeNav} change={this.pageChange} />
+                                <Topbar username={this.state.username} logged={this.state.logged} open={this.openNav} close={this.closeNav} change={this.pageChange} />
                                 <Content page={this.state.page} />
                             </div>
                         </Route>
                         <Route path="/simulationstation">
                             <div>
-                                <Topbar open={this.openNav} close={this.closeNav} change={this.pageChange} />
+                                <Topbar username={this.state.username} logged={this.state.logged} open={this.openNav} close={this.closeNav} change={this.pageChange} />
                                 <Content page={this.state.page} />
                             </div>
                         </Route>
                         <Route path="/">
                             <div>
-                                <Topbar open={this.openNav} close={this.closeNav} change={this.pageChange} />
+                                <Topbar username={this.state.username} logged={this.state.logged} open={this.openNav} close={this.closeNav} change={this.pageChange} />
                                 <Content page={this.state.page} />
                             </div>
                         </Route>
