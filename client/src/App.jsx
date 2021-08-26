@@ -1,6 +1,7 @@
 import React from 'react';
 import Topbar from './components/Topbar.jsx';
 import Content from './components/Content.jsx';
+import myfont from './Myfont.ttf';
 import {
     BrowserRouter as Router,
     Switch,

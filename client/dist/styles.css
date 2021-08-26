@@ -1,8 +1,17 @@
+@font-face {
+  font-family: 'MyFont';
+  src:  url('./fonts/Myfont.ttf') format('woff2'),
+        url('./fonts/Myfont.ttf') format('woff');
+}
 .all-videos {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-top: 40px;
+}
+
+body {
+  font-family: 'MyFont', Fallback, sans-serif;
 }
 
 .banner {
