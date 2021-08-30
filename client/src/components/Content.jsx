@@ -4,13 +4,20 @@ import Videos from './Videos.jsx';
 
 
 function Content(props) {
-    console.log(props.page)
     if (props.page === "login" || props.page === "register") {
-        return (<Login logged={props.logged} change={props.change} setLogged={props.setLogged} page={props.page} />)
+        return (
+            <Login
+                logged={props.logged}
+                change={props.change}
+                setLogged={props.setLogged}
+                page={props.page}
+            />)
     } else if (props.extend === true) {
         return (
             <div>
-                {<Videos count={1}></Videos>}
+                {<Videos 
+                logged={props.logged}
+                count={1}/>}
             </div>
         )
     } else if (props.page === "terms") {
@@ -22,7 +29,9 @@ function Content(props) {
             </div>
         )
     } else return <div>
-        {<Videos count={2}></Videos>}
+        {<Videos 
+        logged={props.logged}
+        count={2}/>}
     </div>
 }
 

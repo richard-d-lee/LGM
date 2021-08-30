@@ -64,6 +64,19 @@ body {
   margin-top: 50px;
 }
 
+#flex-comment {
+  display: flex;
+  align-self: center;
+  flex-direction: row;
+}
+
+
+#flex-full {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 5px double darkolivegreen;
+}
+
 .flex-description {
   display: flex;
   width: 300px;
@@ -74,12 +87,16 @@ body {
   background-color: darkseagreen;
 }
 
+#flex-full {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 5px double darkolivegreen;
+}
+
 .flex-video {
   display: flex;
   flex-direction: row;
   align-items: center;
-  border-bottom: 5px double darkolivegreen;
-
 }
 
 input {
