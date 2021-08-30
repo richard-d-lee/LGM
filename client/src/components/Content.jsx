@@ -16,7 +16,7 @@ function Content(props) {
             return (
                 <div className="all-videos terms">
                 <p>
-                    By agreeing to our terms of service, you agree to not be rude in the forums and agree that at any time, for any reason, the moderators of Lee Gaming can revoke any and all priveleges associated with the use of this website. You also agree that Richard "Buz" Lee is the god-king of all reality.
+                    By agreeing to our terms of service, you agree to not be rude in the forums and agree that at any time, for any reason, the moderators of Lee Gaming can revoke any and all priveleges associated with the use of this website.
                 </p>
             </div>
         )

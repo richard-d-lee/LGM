@@ -10,8 +10,13 @@
   margin-top: 40px;
 }
 
+
 body {
   font-family: 'MyFont', Fallback, sans-serif;
+}
+
+.border {
+  border-bottom: 5px double darkolivegreen;
 }
 
 button {
@@ -64,10 +69,36 @@ body {
   margin-top: 50px;
 }
 
-#flex-comment {
-  display: flex;
-  align-self: center;
-  flex-direction: row;
+.fade-in {
+  animation: fadeIn 1s;
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+  -ms-animation: fadeIn 1s;
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
 
 #flex-cancel {
@@ -76,6 +107,12 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+#flex-comment {
+  display: flex;
+  align-self: center;
+  flex-direction: row;
+}
+
 
 .flex-description {
   display: flex;
@@ -233,8 +270,8 @@ input {
 }
 
 .terms {
-  margin: 100px;
-  font-size: 50px;
+  margin: 30px 300px 0px 300px;
+  font-size: 60px;
   text-align: center;
 }
 

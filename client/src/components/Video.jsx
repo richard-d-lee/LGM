@@ -3,12 +3,9 @@ import React, { useState } from 'react';
 
 function Video(props) {
     const [comment, setComment] = useState(false)
-    let postComment = () => {
-
-    }
     if (comment === true) {
         return (
-            <div id="flex-full">
+            <div id="flex-full" className="fade-in">
                 <div className={"flex-video " + props.class}>
                     <div className="flex-description">
                         <h1 className="video-title">{props.title}</h1>
@@ -36,7 +33,7 @@ function Video(props) {
             </div>
         )
     } else return (
-        <div className={"flex-video " + props.class}>
+        <div className={"border flex-video " + props.class}>
             <div className="flex-description">
                 <h1 className="video-title">{props.title}</h1>
                 <p id="description-text">{props.description}</p>
@@ -44,7 +41,7 @@ function Video(props) {
                     if (props.logged === false) {
                         alert("You must be logged in to comment!")
                     } else {
-                        setComment(true)
+                        setComment(true);
                     }
                 }}>Comment</button>
             </div>
