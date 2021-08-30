@@ -20,13 +20,18 @@ function Video(props) {
                 <div id="flex-comment">
                     <textarea placeholder="Enter your friendly comment here!" id="home-comment-field">
                     </textarea>
-                    <button id="comment-button" onClick={() => {
-                        if (props.logged === false) {
-                            alert("You must be logged in to comment!")
-                        } else {
+                    <div id="flex-cancel">
+                        <button id="comment-button" onClick={() => {
+                            if (props.logged === false) {
+                                alert("You must be logged in to comment!")
+                            } else {
+                                setComment(false)
+                            }
+                        }}>Add Comment</button>
+                        <button id="comment-button" onClick={() => {
                             setComment(false)
-                        }
-                    }}> Add Comment</button>
+                        }}>Cancel</button>
+                    </div>
                 </div>
             </div>
         )
