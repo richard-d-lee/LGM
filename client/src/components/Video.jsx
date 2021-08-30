@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 
 function Video(props) {
@@ -19,11 +20,15 @@ function Video(props) {
                     </textarea>
                     <div id="flex-cancel">
                         <button id="comment-button" onClick={() => {
-                            if (props.logged === false) {
-                                alert("You must be logged in to comment!")
-                            } else {
-                                setComment(false)
-                            }
+                            let comment = document.querySelector('#home-comment-field');
+                            axios.post('/comment', {
+                                channel: props.class,
+                                title: props.title,
+                                description: props.description,
+                                username: props.username,
+                                comment: comment.value,
+                                url: props.url
+                            })
                         }}>Add Comment</button>
                         <button id="comment-button" onClick={() => {
                             setComment(false)

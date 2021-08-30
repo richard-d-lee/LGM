@@ -324,7 +324,6 @@ input {
   .flex-video {
     padding-top: 30px;
     flex-direction: column;
-    border-bottom: 5px double darkolivegreen;
   }
   .all-videos {
     margin-top: 0px;

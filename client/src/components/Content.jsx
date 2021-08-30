@@ -22,6 +22,7 @@ function Content(props) {
         )
     } else return <div>
         {<Videos 
+        username={props.username}
         logged={props.logged}/>}
     </div>
 }

@@ -110,6 +110,7 @@ class App extends React.Component {
                                     close={this.closeNav}
                                     change={this.pageChange} />
                                 <Content
+                                    username={this.state.username}
                                     change={this.pageChange}
                                     logged={this.state.logged} page={this.state.page} />
                             </div>
@@ -122,6 +123,7 @@ class App extends React.Component {
                                     close={this.closeNav}
                                     change={this.pageChange} />
                                 <Content
+                                    username={this.state.username}
                                     change={this.pageChange}
                                     logged={this.state.logged} page={this.state.page} />
                             </div>
@@ -134,6 +136,7 @@ class App extends React.Component {
                                     close={this.closeNav}
                                     change={this.pageChange} />
                                 <Content
+                                    username={this.state.username}
                                     change={this.pageChange}
                                     logged={this.state.logged} page={this.state.page} />
                             </div>
@@ -146,6 +149,7 @@ class App extends React.Component {
                                     close={this.closeNav}
                                     change={this.pageChange} />
                                 <Content
+                                    username={this.state.username}
                                     change={this.pageChange}
                                     logged={this.state.logged} page={"home"} />
                             </div>

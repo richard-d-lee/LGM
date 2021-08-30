@@ -10,6 +10,7 @@ const Videos = (props) => {
             <div className="all-videos">
                 {myVideos.slice(0, 4).map((video) => {
                     return <Video
+                        username={props.username}
                         logged={props.logged}
                         title={video.title}
                         class={video.class}
@@ -25,6 +26,7 @@ const Videos = (props) => {
             <div className="all-videos">
                 {myVideos.map((video) => {
                     return <Video
+                        username={props.username}
                         logged={props.logged}
                         title={video.title}
                         class={video.class}
