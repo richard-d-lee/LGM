@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 import React, { useState } from 'react';
 import {
     BrowserRouter as Router,
@@ -50,6 +51,7 @@ let registerClick = (changeFunc) => {
 }
 
 function Login(props) {
+    const history = useHistory();
     let loginClick = (e) => {
         let username = e.target.previousSibling.previousSibling.lastChild.value
         let password = e.target.previousSibling.lastChild.value;
@@ -65,6 +67,7 @@ function Login(props) {
                     alert("Username does not exist!")
                 } else if (data.data === "success") {
                     props.setLogged(username)
+                    history.push("/home");
                 } else if (data.data === "incorrect") {
                     alert("Incorrect password!")
                 }

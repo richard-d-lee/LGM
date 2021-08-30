@@ -2,6 +2,21 @@ import React from 'react';
 import Topbar from './components/Topbar.jsx';
 import Content from './components/Content.jsx';
 import myfont from './Myfont.ttf';
+import { useHistory } from "react-router-dom";
+
+function HomeButton() {
+  const history = useHistory();
+
+  function handleClick() {
+    history.push("/home");
+  }
+
+  return (
+    <button type="button" onClick={handleClick}>
+      Go home
+    </button>
+  );
+}
 import {
     BrowserRouter as Router,
     Switch,
@@ -22,6 +37,7 @@ class App extends React.Component {
         this.openNav = this.openNav.bind(this);
         this.closeNav = this.closeNav.bind(this);
         this.pageChange = this.pageChange.bind(this);
+        this.render = this.render.bind(this)
     }
 
     setLogged(name) {
@@ -56,7 +72,7 @@ class App extends React.Component {
                                     change={this.pageChange}
                                     setLogged={this.setLogged}
                                     logged={this.state.logged}
-                                    page={this.state.page} />
+                                    page={"login"} />
                             </div>
                         </Route>
                         <Route path="/termsofservice">
