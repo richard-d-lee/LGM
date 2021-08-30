@@ -18,8 +18,7 @@ function Video(props) {
                     </iframe>
                 </div>
                 <div id="flex-comment">
-                    <textarea>
-                        FDSAFDADFSDFSADFS
+                    <textarea placeholder="Enter your friendly comment here!" id="home-comment-field">
                     </textarea>
                     <button id="comment-button" onClick={() => {
                         if (props.logged === false) {

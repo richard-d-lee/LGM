@@ -99,6 +99,17 @@ body {
   align-items: center;
 }
 
+#home-comment-field {
+  text-align: center;
+  height: 140px;
+  width: 400px;
+  margin-bottom: 50px;
+  margin-right: 100px;
+  resize: none;
+  font-size: 21px;
+  font-family: 'MyFont', Fallback, 'Courier New', Courier, monospace;
+}
+
 input {
   font-family: 'MyFont', Fallback, sans-serif;
   font-size: 19px;
