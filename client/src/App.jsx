@@ -25,7 +25,7 @@ class App extends React.Component {
     }
 
     setLogged(name) {
-        this.setState({ logged: !this.state.logged, username: name })
+        this.setState({page: 'home', logged: !this.state.logged, username: name })
     }
 
     pageChange(newPage) {
@@ -49,7 +49,7 @@ class App extends React.Component {
                         <Route path="/login">
                             <div>
                                 <Topbar username={this.state.username} logged={this.state.logged} open={this.openNav} close={this.closeNav} change={this.pageChange} />
-                                <Content setLogged={this.setLogged} page={"login"} />
+                                <Content setLogged={this.setLogged} page={this.state.page} />
                             </div>
                         </Route>
                         <Route path="/register">

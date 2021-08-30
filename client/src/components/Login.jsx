@@ -15,7 +15,6 @@ let clearFields = () => {
     })
 }
 let registerClick = (e) => {
-    console.log(e)
     let username = e.target.previousSibling.previousSibling.previousSibling.lastChild.value
     let passOne = e.target.previousSibling.previousSibling.lastChild.value;
     let passTwo = e.target.previousSibling.lastChild.value;
@@ -49,8 +48,8 @@ let registerClick = (e) => {
 
 function Login(props) {
     let loginClick = (e) => {
-        let username = e.target.parentNode.previousSibling.previousSibling.lastChild.value
-        let password = e.target.parentNode.previousSibling.lastChild.value;
+        let username = e.target.previousSibling.previousSibling.lastChild.value
+        let password = e.target.previousSibling.lastChild.value;
         let apiObj = {
             username: username,
             password: password,
@@ -97,9 +96,7 @@ function Login(props) {
                     <p id="username-text">password</p>
                     <input type="password" placeholder="many characters" className="text-field"></input>
                 </center>
-                <Link to="/" onClick={loginClick}>
-                    <button>Submit</button>
-                </Link>
+                    <button onClick={loginClick}>Submit</button>
             </div>
         </center>
     )

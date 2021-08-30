@@ -23,7 +23,7 @@ function Topbar(props) {
                     <Link to="/register" className="register">
                         register
                     </Link>
-                    <Link to="/login" className="login-text">
+                    <Link to="/login" onClick={() => {props.change('login')}} className="login-text">
                         login
                     </Link>
                 </div>
