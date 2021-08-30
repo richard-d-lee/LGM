@@ -14,8 +14,8 @@ let clearFields = () => {
         node.value = ""
     })
 }
-let registerClick = (e) => {
-    var checkedValue = document.querySelector('#register-check').value;
+let registerClick = (changeFunc) => {
+    let registerBox = document.querySelector('#register-check')
     let usernameField = document.querySelector('#username-input').value
     let pass1Field = document.querySelector('#pass1-input').value
     let pass2Field = document.querySelector('#pass2-input').value
@@ -23,7 +23,9 @@ let registerClick = (e) => {
         username: usernameField,
         password: pass1Field,
     }
-    if (pass1Field !== pass2Field) {
+    if (registerBox.checked === false) {
+        alert("You must agree to the Terms of Service!")
+    } else if (pass1Field !== pass2Field) {
         alert("Passwords do not match!")
         clearFields()
     } else if (pass1Field.length < 8) {
@@ -36,6 +38,7 @@ let registerClick = (e) => {
                 alert("Username already exists!")
             } else if (data.data === 'saved') {
                 alert(usernameField + " is now registered! Log in to access features.")
+                changeFunc("login")
                 window.location.href = "/login";
             }
             let allFields = document.querySelectorAll('.text-field');
@@ -54,16 +57,20 @@ function Login(props) {
             username: username,
             password: password,
         }
-        axios.post('/loginUser', apiObj).then((data) => {
-            if (data.data === 'badUser') {
-                alert("Username does not exist!")
-            } else if (data.data === "success") {
-                props.setLogged(username)
-            } else if (data.data === "incorrect") {
-                alert("Incorrect password!")
-            }
-            clearFields()
-        })
+        if (props.logged === true) {
+            alert("You are already logged in!")
+        } else {
+            axios.post('/loginUser', apiObj).then((data) => {
+                if (data.data === 'badUser') {
+                    alert("Username does not exist!")
+                } else if (data.data === "success") {
+                    props.setLogged(username)
+                } else if (data.data === "incorrect") {
+                    alert("Incorrect password!")
+                }
+                clearFields()
+            })
+        }
     }
     if (props.page === "register") {
         return (
@@ -85,12 +92,12 @@ function Login(props) {
                         <div id="register-row">
                             <input type="checkbox" id="register-check" name="register"></input>
                             <label for="register">By registering, I agree to the&nbsp;
-                                <Link to="/termsofservice">
+                                <Link target="_blank" to="/termsofservice">
                                     Terms of Service
                                 </Link>
                             </label>
                         </div>
-                        <button id="register-button" onClick={registerClick}>Submit</button>
+                        <button id="register-button" onClick={() => { registerClick(props.change) }}>Submit</button>
                     </div>
                 </div>
             </center>
