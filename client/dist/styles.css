@@ -14,11 +14,6 @@ body {
   font-family: 'MyFont', Fallback, sans-serif;
 }
 
-input {
-  font-family: 'MyFont', Fallback, sans-serif;
-  font-size: 19px;
-}
-
 button {
   font-family: 'MyFont', Fallback, sans-serif;
   font-size: large;
@@ -87,6 +82,11 @@ body {
 
 }
 
+input {
+  font-family: 'MyFont', Fallback, sans-serif;
+  font-size: 19px;
+}
+
 #login-page {
   border: 5px double darkolivegreen;
   border-radius: 40px;
@@ -149,6 +149,25 @@ body {
   width: min-content;
   padding: 10px;
 }
+
+#register-button {
+  width: 40%;
+  align-self: center;
+  margin-top: 30px;
+}
+
+#register-column {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#register-row {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
 
 .sidebar {
   height: 100%; /* 100% Full-height */

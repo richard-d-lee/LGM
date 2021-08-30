@@ -41,7 +41,6 @@ class App extends React.Component {
         document.getElementById("main").style.marginLeft = "0px";
     }
     render() {
-        console.log(this.state)
         return (
             <Router>
                 <div>
@@ -74,6 +73,12 @@ class App extends React.Component {
                             <div>
                                 <Topbar username={this.state.username} logged={this.state.logged} open={this.openNav} close={this.closeNav} change={this.pageChange} />
                                 <Content page={this.state.page} />
+                            </div>
+                        </Route>
+                        <Route path="/home">
+                            <div>
+                                <Topbar username={this.state.username} logged={this.state.logged} open={this.openNav} close={this.closeNav} change={this.pageChange} />
+                                <Content page={"home"} />
                             </div>
                         </Route>
                     </Switch>

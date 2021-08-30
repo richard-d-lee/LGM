@@ -9,11 +9,10 @@ import {
 
 
 function Topbar(props) {
-    console.log(props.username)
     let renderLogin = (state) => {
         if (state === true) {
             return (
-                <Link to="/" className="login-text">
+                <Link to="/home" className="login-text">
                     {props.username}
                 </Link>
             )
@@ -33,7 +32,7 @@ function Topbar(props) {
     return (
         <div className="topbar">
             <Sidebar open={props.open} close={props.close} />
-            <Link to="/" className="banner">
+            <Link to="/home" onClick={() => {props.change('home')}} className="banner">
                 Welcome to Lee Gaming and Media!
             </Link>
             <div className="portal">

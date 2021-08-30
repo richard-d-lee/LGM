@@ -15,29 +15,29 @@ let clearFields = () => {
     })
 }
 let registerClick = (e) => {
-    let username = e.target.previousSibling.previousSibling.previousSibling.lastChild.value
-    let passOne = e.target.previousSibling.previousSibling.lastChild.value;
-    let passTwo = e.target.previousSibling.lastChild.value;
+    var checkedValue = document.querySelector('#register-check').value;
+    let usernameField = document.querySelector('#username-input').value
+    let pass1Field = document.querySelector('#pass1-input').value
+    let pass2Field = document.querySelector('#pass2-input').value
     let apiObj = {
-        username: username,
-        password: passOne,
+        username: usernameField,
+        password: pass1Field,
     }
-    if (passOne !== passTwo) {
+    if (pass1Field !== pass2Field) {
         alert("Passwords do not match!")
         clearFields()
-    } else if (passOne.length < 8) {
+    } else if (pass1Field.length < 8) {
         alert("Your password must be at least eight characters long.")
         clearFields()
-        window.location = '/register'
     }
     else {
         axios.post('/registerUser', apiObj).then((data) => {
             if (data.data === 'exists') {
                 alert("Username already exists!")
             } else if (data.data === 'saved') {
-                alert(username + " is now registered! Log in to access features.")
+                alert(usernameField + " is now registered! Log in to access features.")
+                window.location.href = "/login";
             }
-            window.location = "/login";
             let allFields = document.querySelectorAll('.text-field');
             allFields.forEach((node) => {
                 node.value = ""
@@ -71,17 +71,27 @@ function Login(props) {
                 <div id="login-page">
                     <center id="center-flex">
                         <p id="username-text">username</p>
-                        <input placeholder="something clever" className="text-field"></input>
+                        <input id="username-input" placeholder="something clever" className="text-field"></input>
                     </center>
                     <center id="center-flex">
                         <p id="username-text">password</p>
-                        <input type="password" placeholder="more clever" className="text-field"></input>
+                        <input id="pass1-input" type="password" placeholder="more clever" className="text-field"></input>
                     </center>
                     <center id="center-flex">
                         <p id="username-text">re-enter</p>
-                        <input type="password" placeholder="even more clever" className="text-field"></input>
+                        <input id="pass2-input" type="password" placeholder="even more clever" className="text-field"></input>
                     </center>
-                    <button onClick={registerClick}>Submit</button>
+                    <div id="register-column">
+                        <div id="register-row">
+                            <input type="checkbox" id="register-check" name="register"></input>
+                            <label for="register">By registering, I agree to the&nbsp;
+                                <Link to="/termsofservice">
+                                    Terms of Service
+                                </Link>
+                            </label>
+                        </div>
+                        <button id="register-button" onClick={registerClick}>Submit</button>
+                    </div>
                 </div>
             </center>
         )
@@ -96,7 +106,7 @@ function Login(props) {
                     <p id="username-text">password</p>
                     <input type="password" placeholder="many characters" className="text-field"></input>
                 </center>
-                    <button onClick={loginClick}>Submit</button>
+                <button onClick={loginClick}>Submit</button>
             </div>
         </center>
     )
