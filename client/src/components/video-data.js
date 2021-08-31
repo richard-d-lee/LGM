@@ -1,5 +1,11 @@
 const myVideos = [
     {
+        title: "Simulation Station #3",
+        url: "https://www.youtube.com/embed/eOO2w1JW170",
+        description: "In this month's episode we discuss Resident Evil 7, a bunch of different TV shows, and Tom Cruise.",
+        class: "simstat"
+    },
+    {
         title: "MHII Collector's Pack",
         url: "https://www.youtube.com/embed/SPtQziXKwlo",
         description: "Joey and friends crack open a boat load of shiny cards! Check out the beautiful extended arts and foils.",
