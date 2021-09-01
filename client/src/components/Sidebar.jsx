@@ -22,7 +22,9 @@ function Sidebar(props) {
         <a href="#">S/D/S</a>
         <a href="#">Forum</a>
         <a href="#">Other Content</a>
-        <a href="#">About Us</a>
+        <Link to="/about">
+                    About Us
+        </Link>
       </div>
       <div id="main">
         <button className="openbtn" onClick={props.open}>&#9776; </button>

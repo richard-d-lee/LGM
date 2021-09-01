@@ -3,6 +3,7 @@
   src:  url('./fonts/Myfont.ttf') format('woff2'),
         url('./fonts/Myfont.ttf') format('woff');
 }
+
 .all-videos {
   display: flex;
   align-items: center;
@@ -321,6 +322,11 @@ input {
 }
 
 @media screen and (max-width: 1000px) {
+  .terms {
+    margin: 30px 100px 0px 100px;
+    font-size: 50px;
+    text-align: center;
+  }
   .flex-video {
     padding-top: 30px;
     flex-direction: column;

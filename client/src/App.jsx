@@ -5,17 +5,17 @@ import myfont from './Myfont.ttf';
 import { useHistory } from "react-router-dom";
 
 function HomeButton() {
-  const history = useHistory();
+    const history = useHistory();
 
-  function handleClick() {
-    history.push("/home");
-  }
+    function handleClick() {
+        history.push("/home");
+    }
 
-  return (
-    <button type="button" onClick={handleClick}>
-      Go home
-    </button>
-  );
+    return (
+        <button type="button" onClick={handleClick}>
+            Go home
+        </button>
+    );
 }
 import {
     BrowserRouter as Router,
@@ -61,6 +61,20 @@ class App extends React.Component {
             <Router>
                 <div>
                     <Switch>
+                        <Route path="/about">
+                            <div>
+                                <Topbar username={this.state.username}
+                                    logged={this.state.logged}
+                                    open={this.openNav}
+                                    close={this.closeNav}
+                                    change={this.pageChange} />
+                                <Content
+                                    change={this.pageChange}
+                                    setLogged={this.setLogged}
+                                    logged={this.state.logged}
+                                    page={"about"} />
+                            </div>
+                        </Route>
                         <Route path="/login">
                             <div>
                                 <Topbar username={this.state.username}
