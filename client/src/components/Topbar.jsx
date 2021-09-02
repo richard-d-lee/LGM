@@ -7,7 +7,6 @@ import {
     Link
 } from "react-router-dom";
 
-
 function Topbar(props) {
     let renderLogin = (state) => {
         if (state === true) {

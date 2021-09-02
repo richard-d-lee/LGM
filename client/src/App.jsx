@@ -4,20 +4,6 @@ import Content from './components/Content.jsx';
 import myfont from './Myfont.ttf';
 import { useHistory } from "react-router-dom";
 
-
-function HomeButton() {
-    const history = useHistory();
-
-    function handleClick() {
-        history.push("/home");
-    }
-
-    return (
-        <button type="button" onClick={handleClick}>
-            Go home
-        </button>
-    );
-}
 import {
     BrowserRouter as Router,
     Switch,
@@ -39,6 +25,8 @@ class App extends React.Component {
         this.closeNav = this.closeNav.bind(this);
         this.pageChange = this.pageChange.bind(this);
         this.render = this.render.bind(this)
+        this.renderBar = this.renderBar.bind(this)
+        this.renderContent = this.renderContent.bind(this)
     }
 
     renderBar() {

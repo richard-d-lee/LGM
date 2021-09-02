@@ -24,7 +24,7 @@ module.exports = {
             }
           }
         ]
-      }
+      },
     ]
   },
   output: { // IMPORTANT: This is where we set the bundle to be built into a folder

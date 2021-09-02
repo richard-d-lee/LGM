@@ -51,6 +51,9 @@ let registerClick = (changeFunc) => {
 }
 
 function Login(props) {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     const history = useHistory();
     let loginClick = (e) => {
         let username = e.target.previousSibling.previousSibling.lastChild.value
