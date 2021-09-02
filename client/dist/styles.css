@@ -4,6 +4,11 @@
         url('./fonts/Myfont.ttf') format('woff');
 }
 
+
+#age-check {
+  margin-top: -2px;
+}
+
 .all-videos {
   display: flex;
   align-items: center;

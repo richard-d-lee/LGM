@@ -16,7 +16,8 @@ let clearFields = () => {
     })
 }
 let registerClick = (changeFunc) => {
-    let registerBox = document.querySelector('#register-check')
+    let registerBox = document.querySelector('.checkbox-1')
+    let ageBox = document.querySelector('.checkbox-2')
     let usernameField = document.querySelector('#username-input').value
     let pass1Field = document.querySelector('#pass1-input').value
     let pass2Field = document.querySelector('#pass2-input').value
@@ -26,6 +27,8 @@ let registerClick = (changeFunc) => {
     }
     if (registerBox.checked === false) {
         alert("You must agree to the Terms of Service!")
+    } else if (ageBox.checked === false) {
+        alert("You must be at least 15 years old to create an account!")
     } else if (pass1Field !== pass2Field) {
         alert("Passwords do not match!")
         clearFields()
@@ -97,12 +100,20 @@ function Login(props) {
                     <div id="register-column">
                         <div id="register-row">
                             <div id="register-check">
-                                <input type="checkbox" name="register"></input>
+                                <input type="checkbox" name="register" className="checkbox-1"></input>
                             </div>
-                            <label for="register">By registering, I agree to the&nbsp;
+                            <label for="register">I agree to the&nbsp;
                                 <Link target="_blank" to="/terms">
                                     Terms of Service
                                 </Link>
+                            </label>
+                        </div>
+                        <div id="register-row">
+                            <div id="age-check">
+                                <input type="checkbox" name="register" className="checkbox-2"></input>
+                            </div>
+                            <label for="register">
+                                I am at least 15 years old.
                             </label>
                         </div>
                         <button id="register-button" onClick={() => { registerClick(props.change) }}>Submit</button>
