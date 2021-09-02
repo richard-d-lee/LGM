@@ -222,6 +222,10 @@ input {
   margin-top: 30px;
 }
 
+#register-check {
+  margin-top: -4px;
+}
+
 #register-column {
   justify-content: center;
   display: flex;

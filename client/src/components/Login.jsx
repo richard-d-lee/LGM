@@ -93,9 +93,11 @@ function Login(props) {
                     </center>
                     <div id="register-column">
                         <div id="register-row">
-                            <input type="checkbox" id="register-check" name="register"></input>
+                            <div id="register-check">
+                                <input type="checkbox" name="register"></input>
+                            </div>
                             <label for="register">By registering, I agree to the&nbsp;
-                                <Link target="_blank" to="/termsofservice">
+                                <Link target="_blank" to="/terms">
                                     Terms of Service
                                 </Link>
                             </label>

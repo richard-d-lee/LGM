@@ -4,6 +4,7 @@ import Content from './components/Content.jsx';
 import myfont from './Myfont.ttf';
 import { useHistory } from "react-router-dom";
 
+
 function HomeButton() {
     const history = useHistory();
 
@@ -40,6 +41,22 @@ class App extends React.Component {
         this.render = this.render.bind(this)
     }
 
+    renderBar() {
+        return <Topbar username={this.state.username}
+            logged={this.state.logged}
+            open={this.openNav}
+            close={this.closeNav}
+            change={this.pageChange} />
+    }
+
+    renderContent(page) {
+        return <Content
+            change={this.pageChange}
+            setLogged={this.setLogged}
+            logged={this.state.logged}
+            page={page} />
+    }
+
     setLogged(name) {
         this.setState({ page: 'home', logged: !this.state.logged, username: name })
     }
@@ -63,109 +80,50 @@ class App extends React.Component {
                     <Switch>
                         <Route path="/about">
                             <div>
-                                <Topbar username={this.state.username}
-                                    logged={this.state.logged}
-                                    open={this.openNav}
-                                    close={this.closeNav}
-                                    change={this.pageChange} />
-                                <Content
-                                    change={this.pageChange}
-                                    setLogged={this.setLogged}
-                                    logged={this.state.logged}
-                                    page={"about"} />
+                                {this.renderBar()}
+                                {this.renderContent('about')}
                             </div>
                         </Route>
                         <Route path="/login">
                             <div>
-                                <Topbar username={this.state.username}
-                                    logged={this.state.logged}
-                                    open={this.openNav}
-                                    close={this.closeNav}
-                                    change={this.pageChange} />
-                                <Content
-                                    change={this.pageChange}
-                                    setLogged={this.setLogged}
-                                    logged={this.state.logged}
-                                    page={"login"} />
+                                {this.renderBar()}
+                                {this.renderContent('login')}
                             </div>
                         </Route>
-                        <Route path="/termsofservice">
+                        <Route path="/terms">
                             <div>
-                                <Topbar username={this.state.username}
-                                    logged={this.state.logged}
-                                    open={this.openNav}
-                                    close={this.closeNav}
-                                    change={this.pageChange} />
-                                <Content
-                                    change={this.pageChange}
-                                    setLogged={this.setLogged}
-                                    page={"terms"} />
+                                {this.renderBar()}
+                                {this.renderContent('terms')}
                             </div>
                         </Route>
                         <Route path="/register">
                             <div>
-                                <Topbar
-                                    username={this.state.username}
-                                    logged={this.state.logged}
-                                    open={this.openNav}
-                                    close={this.closeNav}
-                                    change={this.pageChange} />
-                                <Content
-                                    change={this.pageChange}
-                                    logged={this.state.logged}
-                                    page={"register"} />
+                                {this.renderBar()}
+                                {this.renderContent('register')}
                             </div>
                         </Route>
                         <Route path="/crispyscollections">
                             <div>
-                                <Topbar username={this.state.username}
-                                    logged={this.state.logged}
-                                    open={this.openNav}
-                                    close={this.closeNav}
-                                    change={this.pageChange} />
-                                <Content
-                                    username={this.state.username}
-                                    change={this.pageChange}
-                                    logged={this.state.logged} page={this.state.page} />
+                                {this.renderBar()}
+                                {this.renderContent('crispy')}
                             </div>
                         </Route>
                         <Route path="/simulationstation">
                             <div>
-                                <Topbar username={this.state.username}
-                                    logged={this.state.logged}
-                                    open={this.openNav}
-                                    close={this.closeNav}
-                                    change={this.pageChange} />
-                                <Content
-                                    username={this.state.username}
-                                    change={this.pageChange}
-                                    logged={this.state.logged} page={this.state.page} />
-                            </div>
-                        </Route>
-                        <Route path="/">
-                            <div>
-                                <Topbar username={this.state.username}
-                                    logged={this.state.logged}
-                                    open={this.openNav}
-                                    close={this.closeNav}
-                                    change={this.pageChange} />
-                                <Content
-                                    username={this.state.username}
-                                    change={this.pageChange}
-                                    logged={this.state.logged} page={this.state.page} />
+                                {this.renderBar()}
+                                {this.renderContent('simstat')}
                             </div>
                         </Route>
                         <Route path="/home">
                             <div>
-                                <Topbar username={this.state.username}
-                                    logged={this.state.logged}
-                                    open={this.openNav}
-                                    close={this.closeNav}
-                                    change={this.pageChange} />
-                                <Content
-                                    username={this.state.username}
-                                    change={this.pageChange}
-                                    logged={this.state.logged} page={"home"} />
+                                {this.renderBar()}
+                                {this.renderContent('home')}
+                            </div>
+                        </Route>
+                        <Route path="/">
+                            <div>
+                                {this.renderBar()}
+                                {this.renderContent('home')}
                             </div>
                         </Route>
                     </Switch>
