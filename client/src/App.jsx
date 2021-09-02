@@ -42,6 +42,7 @@ class App extends React.Component {
             change={this.pageChange}
             setLogged={this.setLogged}
             logged={this.state.logged}
+            username={this.state.username}
             page={page} />
     }
 

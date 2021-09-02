@@ -3,6 +3,11 @@ import axios from 'axios';
 
 
 function Video(props) {
+    let comments = []
+    axios.get('/comments:' + props.title).then((data) => {
+        comments = data.data;
+        console.log(props.title, '--------', comments)
+    });
     const [comment, setComment] = useState(false)
     if (comment === true) {
         return (
@@ -21,6 +26,7 @@ function Video(props) {
                     <div id="flex-cancel">
                         <button id="comment-button" onClick={() => {
                             let comment = document.querySelector('#home-comment-field');
+                            console.log(props.username)
                             axios.post('/comment', {
                                 channel: props.class,
                                 title: props.title,
