@@ -4,6 +4,19 @@ import Video from './Video.jsx';
 const myVideos = require('./video-data.js')
 
 const Videos = (props) => {
+    let renderVideo = (video) => {
+        return <Video
+            username={props.username}
+            logged={props.logged}
+            title={video.title}
+            class={video.class}
+            url={video.url}
+            description={video.description}
+        ></Video>
+    }
+    let renderButton = () => {
+        return <button id="extend-button" onClick={() => setCount(2)}>See More</button>
+    }
     const [count, setCount] = useState(1);
     switch (props.page) {
         case 'crispy':
@@ -12,17 +25,10 @@ const Videos = (props) => {
                     <div className="all-videos">
                         {myVideos.slice(0, 4).map((video) => {
                             if (video.class === 'crispy') {
-                                return <Video
-                                    username={props.username}
-                                    logged={props.logged}
-                                    title={video.title}
-                                    class={video.class}
-                                    url={video.url}
-                                    description={video.description}
-                                ></Video>
+                                return renderVideo(video)
                             }
                         })}
-                        <button id="extend-button" onClick={() => setCount(2)}>See More</button>
+                        {renderButton()}
                     </div>
                 );
             } else {
@@ -30,17 +36,10 @@ const Videos = (props) => {
                     <div className="all-videos">
                         {myVideos.map((video) => {
                             if (video.class === 'crispy') {
-                                return <Video
-                                    username={props.username}
-                                    logged={props.logged}
-                                    title={video.title}
-                                    class={video.class}
-                                    url={video.url}
-                                    description={video.description}
-                                ></Video>
+                                return renderVideo(video)
                             }
                         })}
-                        <button id="extend-button" onClick={() => setCount(2)}>See More</button>
+                        {renderButton()}
                     </div>
                 );
             }
@@ -49,14 +48,7 @@ const Videos = (props) => {
                 <div className="all-videos">
                     {myVideos.map((video) => {
                         if (video.class === 'simstat') {
-                            return <Video
-                                username={props.username}
-                                logged={props.logged}
-                                title={video.title}
-                                class={video.class}
-                                url={video.url}
-                                description={video.description}
-                            ></Video>
+                            return renderVideo(video)
                         }
                     })}
                 </div>
@@ -67,30 +59,16 @@ const Videos = (props) => {
         return (
             <div className="all-videos">
                 {myVideos.slice(0, 4).map((video) => {
-                    return <Video
-                        username={props.username}
-                        logged={props.logged}
-                        title={video.title}
-                        class={video.class}
-                        url={video.url}
-                        description={video.description}
-                    ></Video>
+                    return renderVideo(video)
                 })}
-                <button id="extend-button" onClick={() => setCount(2)}>See More</button>
+                {renderButton()}
             </div>
         );
     } else {
         return (
             <div className="all-videos">
                 {myVideos.map((video) => {
-                    return <Video
-                        username={props.username}
-                        logged={props.logged}
-                        title={video.title}
-                        class={video.class}
-                        url={video.url}
-                        description={video.description}
-                    ></Video>
+                    return renderVideo(video)
                 })}
             </div>
         );
