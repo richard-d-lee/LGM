@@ -4,7 +4,6 @@ import Videos from './Videos.jsx';
 
 
 function Content(props) {
-    console.log(props.username)
     switch (props.page) {
         case 'crispy':
         case 'simstat':
