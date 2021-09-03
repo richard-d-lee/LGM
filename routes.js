@@ -68,6 +68,7 @@ module.exports = function (app) {
             comment: myData.comment, 
             date: new Date(),
         }]
+        console.log(myData)
         //storing username/comment combo
         delete myData.username;
         delete myData.comment;
@@ -88,6 +89,7 @@ module.exports = function (app) {
     });
 
     app.get('/comments:id', function (req, res) {
+        console.log(req.params.id)
         let comments;
         let id = req.params.id.substr(1);
         Video.findOne({title: id}).then((data) => {

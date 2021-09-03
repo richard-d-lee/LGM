@@ -1,6 +1,6 @@
 const myVideos = [
     {
-        title: "Simulation Station #3",
+        title: "Simulation Station 3",
         url: "https://www.youtube.com/embed/eOO2w1JW170",
         description: "In this month's episode we discuss Resident Evil 7, a bunch of different TV shows, and Tom Cruise.",
         class: "simstat"
@@ -30,7 +30,7 @@ const myVideos = [
         class: "crispy"
     },
     {
-        title: "Simulation Station #2",
+        title: "Simulation Station 2",
         url: "https://www.youtube.com/embed/CJNeoCvNZMg",
         description: "In this one we talk about more things! I think canoeing and basketball?",
         class: "simstat"
@@ -43,12 +43,12 @@ const myVideos = [
     },
     {
         title: "Modern Horizons 2",
-        url: "https://www.youtube.com/embed/SPtQziXKwlo",
+        url: "https://www.youtube.com/embed/Ho3htc_Cl1E",
         description: "Can Joey find some excellent commander pulls?",
         class: "crispy"
     },
     {
-        title: "Simulation Station #1",
+        title: "Simulation Station 1",
         url: "https://www.youtube.com/embed/YhHI6ulTxfk",
         description: "What did we talk about? I can't remember so tune in and find out!",
         class: "simstat"

@@ -6,6 +6,7 @@ function Video(props) {
     const [comment, setComment] = useState(false)
     const [comments, setComments] = useState([])
     const [loaded, setLoaded] = useState(false)
+    console.log(comments)
     let tryComments = () => {
         if (loaded === true) {
             if (typeof(comments) !== "string") {
@@ -18,9 +19,10 @@ function Video(props) {
     }
 
     if (loaded === false) {
+        console.log(props.title)
         axios.get('/comments:' + props.title).then((data) => {
             setComments(data.data);
-            setLoaded(true)
+            setLoaded(true);
         })
     }
     if (comment === true) {
@@ -40,7 +42,6 @@ function Video(props) {
                     <div id="flex-cancel">
                         <button id="comment-button" onClick={() => {
                             let comment = document.querySelector('#home-comment-field');
-                            console.log(props.username)
                             axios.post('/comment', {
                                 channel: props.class,
                                 title: props.title,
