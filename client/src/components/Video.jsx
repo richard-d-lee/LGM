@@ -9,6 +9,7 @@ function Video(props) {
     const [comment, setComment] = useState(false)
     const [comments, setComments] = useState([])
     const [loaded, setLoaded] = useState(false)
+    console.log(props.title, comments)
     let tryComments = () => {
         if (loaded === true) {
             if (typeof (comments) !== "string") {

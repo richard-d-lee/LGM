@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 function Comment(props) {
-  console.log(props.comment)
   let comment = props.comment
   return (
     <div className="flex-column" id="full-comment">
