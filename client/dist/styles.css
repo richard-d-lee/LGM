@@ -179,6 +179,24 @@ body {
   align-items: center;
 }
 
+#forum-home {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#forum-topic {
+  background-color: rgb(167, 187, 133);
+  display: flex;
+  margin: 0px 436px 25px 0px;
+  border-radius: 30px;
+  border: 1px solid darkolivegreen;
+  width: 100%;
+  margin-right: 436px;
+  flex-direction: row;
+  padding: 30px;
+}
+
 #full-comment {
   border-bottom: 1px double darkolivegreen;
 }
@@ -352,6 +370,15 @@ input {
   background-color: bisque;
 }
 
+#topic-button {
+  width: 184px;
+}
+
+#topic-text {
+  margin-left: 30px;
+  font-size: 24px;
+}
+
 #username-text {
   color: white;
   white-space: nowrap;
@@ -397,4 +424,8 @@ input {
   .video {
     border-radius: 30px;
   }
+  #forum-home {
+    margin-right: 0px;
+  }
+  
 }

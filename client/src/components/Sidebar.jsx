@@ -7,23 +7,24 @@ import {
 } from "react-router-dom";
 
 function Sidebar(props) {
-    return (
+  return (
     <div>
       <div id="mySidebar" className="sidebar">
         <a href="javascript:void(0)" className="closebtn" onClick={props.close}>&times;</a>
         <a href="/">Artwork</a>
-        <a href="#">Reviews</a>
-        <Link to="/simulationstation">
-                    Simulation Station Podcast
+        <Link to="/simulationstation" onClick={props.close}>
+          Simulation Station Podcast
         </Link>
-        <Link to="/crispyscollections">
-                    Crispy's Collections
+        <Link to="/crispyscollections" onClick={props.close}>
+          Crispy's Collections
         </Link>
         <a href="#">S/D/S</a>
-        <a href="#">Forum</a>
+        <Link to="/forum" onClick={props.close}>
+          Forum
+        </Link>
         <a href="#">Other Content</a>
         <Link to="/about">
-                    About Us
+          About Us
         </Link>
       </div>
       <div id="main">

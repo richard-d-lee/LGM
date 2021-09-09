@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Login from './Login.jsx';
 import Videos from './Videos.jsx';
-
+import Forum from './Forum.jsx';
 
 function Content(props) {
     switch (props.page) {
@@ -13,18 +13,22 @@ function Content(props) {
                         username={props.username}
                         logged={props.logged}
                         page={props.page}
-                        />}
+                    />}
                 </div>
             )
-            case 'login':
-            case 'register':
-                return (
-                    <Login
-                        logged={props.logged}
-                        change={props.change}
-                        setLogged={props.setLogged}
-                        page={props.page}
-                    />)
+        case 'login':
+        case 'register':
+            return (
+                <Login
+                    logged={props.logged}
+                    change={props.change}
+                    setLogged={props.setLogged}
+                    page={props.page}
+                />)
+        case 'forum':
+            return (
+                <Forum />
+            );
         case 'about':
             return (
                 <div className="all-videos terms">
