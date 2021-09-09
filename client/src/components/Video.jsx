@@ -18,7 +18,7 @@ function Video(props) {
                             Recent comments
                         </div>
                         <div id="comment-col-two">
-                            {comments.slice(comments.length - 2).map((comment) => {
+                            {comments.slice(comments.length - 4).map((comment) => {
                                 //good code, or great code?
                                 return <Comment comment={comment}></Comment>
                             })}
@@ -62,7 +62,6 @@ function Video(props) {
                                 comment: comment.value,
                                 url: props.url,
                             }).then((data) => {
-                                alert('comment saved')
                                 getComments()
                                 setComment(false)
                             })
