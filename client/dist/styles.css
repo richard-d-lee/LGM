@@ -60,6 +60,37 @@ body {
   margin-bottom: 20px;
 }
 
+#comment-row {
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+}
+#comment-col {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  align-self: baseline;
+  flex-direction: column;
+}
+
+#comment-col-two {
+  display: flex;
+  flex-direction: column;
+}
+
+#comment-date {
+  width: 110px;
+  font-size: 15px;
+}
+
+#comment-text {
+  word-break: break-all;
+}
+
+#comment-username {
+  font-weight: bold;
+}
+
 #description-text {
   text-align: center;
   font-size: 22px;
@@ -119,6 +150,10 @@ body {
   flex-direction: row;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
 
 .flex-description {
   display: flex;
@@ -137,9 +172,14 @@ body {
 }
 
 .flex-video {
+  width: 90%;
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+#full-comment {
+  border-bottom: 1px double darkolivegreen;
 }
 
 #home-comment-field {
@@ -205,6 +245,12 @@ input {
 .portal {
   margin-top: 15px;
   padding: 10px;
+}
+
+#recent-comments {
+  margin-top: 30px;
+  font-size: 30px;
+  font-style: italic;
 }
 
 .register {

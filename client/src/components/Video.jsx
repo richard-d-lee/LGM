@@ -1,29 +1,41 @@
 import React, { useState } from 'react';
 import Comment from './Comment.jsx'
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
+import 'regenerator-runtime/runtime';
 
 function Video(props) {
+    const history = useHistory();
     const [comment, setComment] = useState(false)
     const [comments, setComments] = useState([])
     const [loaded, setLoaded] = useState(false)
-    console.log(comments)
     let tryComments = () => {
         if (loaded === true) {
-            if (typeof(comments) !== "string") {
-                    return comments.map((comment) => {
-                        //THIS IS TERRIBLY CONFUSING
-                        return <Comment comment={comment}></Comment>
-                    })
+            if (typeof (comments) !== "string") {
+                return (
+                    <div id="comment-col">
+                        <div id="recent-comments">
+                            Recent comments
+                        </div>
+                        <div id="comment-col-two">
+                            {comments.slice(comments.length - 2).map((comment) => {
+                                //good code, or great code?
+                                return <Comment comment={comment}></Comment>
+                            })}
+                        </div>
+                    </div>
+                )
             }
         }
     }
-
-    if (loaded === false) {
-        console.log(props.title)
-        axios.get('/comments:' + props.title).then((data) => {
+    let getComments = async () => {
+        await axios.get('/comments:' + props.title).then((data) => {
             setComments(data.data);
             setLoaded(true);
         })
+    }
+    if (loaded === false) {
+        getComments()
     }
     if (comment === true) {
         return (
@@ -48,7 +60,11 @@ function Video(props) {
                                 description: props.description,
                                 username: props.username,
                                 comment: comment.value,
-                                url: props.url
+                                url: props.url,
+                            }).then((data) => {
+                                alert('comment saved')
+                                getComments()
+                                setComment(false)
                             })
                         }}>Add Comment</button>
                         <button id="comment-button" onClick={() => {
