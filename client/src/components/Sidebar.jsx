@@ -23,7 +23,7 @@ function Sidebar(props) {
           Forum
         </Link>
         <a href="#">Other Content</a>
-        <Link to="/about">
+        <Link to="/about" onClick={props.close}>
           About Us
         </Link>
       </div>

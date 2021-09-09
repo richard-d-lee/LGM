@@ -35,6 +35,7 @@ function Content(props) {
                     <p>
                         We are a band of goofy nerds who like to create things and put them out to the world. This website will regularly be updated with new features and content. Thank you for checking us out!
                     </p>
+                    <a href="mailto:simstatpodcast@gmail.com" subject="LGM Site Contact">Click here to send us an email!</a>
                 </div>
             );
         case 'terms':
