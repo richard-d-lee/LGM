@@ -16,7 +16,7 @@ function Video(props) {
                 return (
                     <div id="comment-col">
                         <div id="recent-comments">
-                            Recent comments
+                            Recent Comments
                         </div>
                         <div id="comment-col-two">
                             {comments.slice(comments.length - 4).map((comment) => {
