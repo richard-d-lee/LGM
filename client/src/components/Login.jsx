@@ -113,7 +113,7 @@ function Login(props) {
                                 <input type="checkbox" name="register" className="checkbox-2"></input>
                             </div>
                             <label for="register">
-                                I am at least 15 years old.
+                                I am at least 18 years old.
                             </label>
                         </div>
                         <button id="register-button" onClick={() => { registerClick(props.change) }}>Submit</button>
