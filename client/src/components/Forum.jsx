@@ -2,6 +2,25 @@ import React, { useState } from 'react';
 let topics = ['Video Games', 'Movies', 'Music', 'Art and Other Beauties', 'Lee Gaming', 'Shitposting', 'Bug Reports']
 
 function Forum(props) {
+    let chooseTopic = (e) => {
+        setTopic(e.target.innerHTML);
+    }
+    let resetTopic = () => {
+        setTopic('')
+    }
+    const [topic, setTopic] = useState('fdsf');
+    switch (topic) {
+        case 'Movies':
+        case 'Video Games':
+        case 'Music':
+        case 'Music':
+        case 'Art and Other Beauties':
+        case 'Lee Gaming':
+        case 'Shitposting':
+        case 'Bug Reports': return (
+            <div onClick={resetTopic}>hello world</div>
+        )
+    }
     return (
         <div id="forum-home">
             <h1>
@@ -11,7 +30,7 @@ function Forum(props) {
                 {topics.map((topic) => {
                     return (
                         <div id="forum-topic">
-                            <button id="topic-button">
+                            <button id="topic-button" onClick={chooseTopic}>
                                 {topic}
                             </button>
                             <div id="topic-text">

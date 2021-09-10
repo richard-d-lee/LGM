@@ -13,7 +13,7 @@ function Sidebar(props) {
         <a href="javascript:void(0)" className="closebtn" onClick={props.close}>&times;</a>
         <a href="/">Artwork</a>
         <Link to="/simulationstation" onClick={props.close}>
-          Simulation Station Podcast
+          Simulation Station
         </Link>
         <Link to="/crispyscollections" onClick={props.close}>
           Crispy's Collections
