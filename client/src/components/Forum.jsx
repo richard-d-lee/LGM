@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-let topics = ['Video Games', 'Movies', 'Music', 'Art and Other Beauties', 'Lee Gaming', 'Shitposting', 'Bug Reports']
+let topics = ['Video Games', 'Movies', 'Music', 'Rowscas', 'Lee Gaming', 'Shitposting', 'Bug Reports']
 
 function Forum(props) {
     let chooseTopic = (e) => {

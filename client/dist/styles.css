@@ -55,10 +55,16 @@ body {
 }
 
 #CJ {
+  border: 20px solid black;
   width: 400px;
   margin-right: 40px;
   height: auto;
 }
+
+#CJ:hover {
+  border: 20px solid darkolivegreen;
+}
+
 
 .CJ {
   display: flex;

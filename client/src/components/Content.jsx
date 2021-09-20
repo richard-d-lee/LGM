@@ -55,7 +55,7 @@ function Content(props) {
                         <img id="CJ" src={rowscas} />
                     </div>
                     <p>
-                        Charles (CJ) Pape was a beloved friend and a constant companion when times were hard. He was bit hard by the depression bug and could always empathize with his friends from his own trauma. There was nothing he loved more in life than playing video games with his friends, and will deeply missed by the creators of this web site.
+                        Charles (CJ) Pape was a beloved friend and a constant companion when times were hard. He could always empathize with the difficulties of others based on his own experiences. There was nothing he loved more in life than playing video games with his friends, and will deeply missed by the creators of this web site.
                         <br></br>
                         <br></br>
                         Rest in peace Rowscas. You live on in me and the many others who you had an impact on. Love you, brother.
