@@ -51,7 +51,7 @@ function Content(props) {
             return (
                 <div className="all-videos CJ">
                     <div className="flex-column">
-                        <h1 id="CJ-date">May 1990 - September 2021</h1>
+                        <h1 id="CJ-date">May 31 1990 - September 9 2021</h1>
                         <img id="CJ" src={rowscas} />
                     </div>
                     <p>

@@ -75,8 +75,9 @@ body {
 }
 
 #CJ-date {
+  font-family: sans-serif;
   margin-left: -35px;
-  font-size: 35px;
+  font-size: 30px;
   font-style: italic;
 }
 
