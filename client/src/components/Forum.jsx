@@ -17,9 +17,25 @@ function Forum(props) {
         case 'Art and Other Beauties':
         case 'Lee Gaming':
         case 'Shitposting':
-        case 'Bug Reports': return (
-            <div onClick={resetTopic}>hello world</div>
-        )
+        case 'Bug Reports':
+            if ('create' === 'create') {
+                return (
+                    <div id="post-home">
+                        <div>
+                            <h1>
+                                {topic}
+                            </h1>
+                        </div>
+                        <form>
+                            <label>
+                                Name:
+                                <input type="text" name="name" />
+                            </label>
+                            <input type="submit" value="Submit" />
+                        </form>
+                    </div>
+                )
+            }
     }
     return (
         <div id="forum-home">

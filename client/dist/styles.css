@@ -271,6 +271,12 @@ input {
   padding: 10px;
 }
 
+#post-home {
+  display: flex;
+  text-align-last: center;
+  flex-direction: column;
+}
+
 #recent-comments {
   font-size: 30px;
   font-style: italic;

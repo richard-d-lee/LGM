@@ -20,6 +20,15 @@ const Video = mongoose.model('Video', {
     comments: Array,
 })
 
+const Post = mongoose.model('Post', {
+    user: String,
+    title: String,
+    description: String,
+    topic: String,
+    upvotes: Number,
+    comments: Array,
+})
+
 const User = mongoose.model('User', {
     username: String,
     password: String,
@@ -61,6 +70,13 @@ module.exports = function (app) {
             }
         })
     });
+    app.get('/forumpost', function(req, res) {
+
+    })
+    app.get('/forumpost', function(req, res) {
+        let myData = req.body;
+
+    })
     app.post('/comment', function (req, res) {
         let myData = req.body;
         const formatYmd = date => date.toISOString().slice(0, 10);

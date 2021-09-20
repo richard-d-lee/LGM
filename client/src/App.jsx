@@ -73,6 +73,12 @@ class App extends React.Component {
                                 {this.renderContent('about')}
                             </div>
                         </Route>
+                        <Route path="/rowscas">
+                            <div>
+                                {this.renderBar()}
+                                {this.renderContent('rowscas')}
+                            </div>
+                        </Route>
                         <Route path="/forum">
                             <div>
                                 {this.renderBar()}

@@ -26,6 +26,9 @@ function Sidebar(props) {
         <Link to="/about" onClick={props.close}>
           About Us
         </Link>
+        <Link to="/rowscas" onClick={props.close}>
+          Charles Pape Memorial
+        </Link>
       </div>
       <div id="main">
         <button className="openbtn" onClick={props.open}>&#9776; </button>
