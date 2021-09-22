@@ -28,7 +28,10 @@ function Content(props) {
                 />)
         case 'forum':
             return (
-                <Forum />
+                <Forum 
+                    logged={props.logged}
+                    username={props.username}
+                />
             );
         case 'about':
             return (

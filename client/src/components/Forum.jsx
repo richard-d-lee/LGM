@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 let topics = ['Video Games', 'Movies', 'Music', 'Rowscas', 'Lee Gaming', 'Shitposting', 'Bug Reports']
 
 function Forum(props) {
+    console.log(props.username)
     let chooseTopic = (e) => {
-        setTopic(e.target.innerHTML);
+        if (props.logged === true) {
+            setTopic(e.target.innerHTML);
+            console.log(topic);
+        } else {
+            alert('You must be logged in to post to the forums!')
+        }
     }
     let resetTopic = () => {
         setTopic('')
@@ -14,28 +20,26 @@ function Forum(props) {
         case 'Video Games':
         case 'Music':
         case 'Music':
-        case 'Art and Other Beauties':
+        case 'Rowscas':
         case 'Lee Gaming':
         case 'Shitposting':
         case 'Bug Reports':
-            if ('create' === 'create') {
-                return (
-                    <div id="post-home">
-                        <div>
-                            <h1>
-                                {topic}
-                            </h1>
-                        </div>
-                        <form>
-                            <label>
-                                Name:
-                                <input type="text" name="name" />
-                            </label>
-                            <input type="submit" value="Submit" />
-                        </form>
+            return (
+                <div id="post-home">
+                    <div>
+                        <h1>
+                            {topic}
+                        </h1>
                     </div>
-                )
-            }
+                    <form>
+                        Create a post: &nbsp;
+                        <label>
+                            <input type="text" name="name" />
+                        </label>
+                        <input type="submit" value="Submit" />
+                    </form>
+                </div>
+            )
     }
     return (
         <div id="forum-home">
