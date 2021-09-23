@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 let topics = ['Video Games', 'Movies', 'Music', 'Rowscas', 'Lee Gaming', 'Shitposting', 'Bug Reports']
 
 function Forum(props) {
-    console.log(props.username)
     let chooseTopic = (e) => {
         if (props.logged === true) {
             setTopic(e.target.innerHTML);
-            console.log(topic);
         } else {
             alert('You must be logged in to post to the forums!')
         }

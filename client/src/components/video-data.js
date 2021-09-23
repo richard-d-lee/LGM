@@ -1,5 +1,11 @@
 const myVideos = [
     {
+        title: "1917",
+        url: "https://www.youtube.com/embed/oS9ct85aKdI",
+        description: "Does the distinct style of this World War One epic pay off? Joey has the answers.",
+        class: "crispy"
+    },
+    {
         title: "Simulation Station 3",
         url: "https://www.youtube.com/embed/eOO2w1JW170",
         description: "In this month's episode we discuss Resident Evil 7, a bunch of different TV shows, and Tom Cruise.",
