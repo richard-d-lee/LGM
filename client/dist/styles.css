@@ -44,6 +44,16 @@ body {
   background-color: burlywood;
 }
 
+.border-bot {
+  border-bottom: 5px double darkolivegreen;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
 #center-flex {
   margin: 40px;
   width: 50%;
@@ -52,6 +62,11 @@ body {
   padding: 10px;
   display: flex;
   background-color: darkolivegreen !important;
+}
+
+#civility {
+  margin-top: 100px;
+  font-size: 55px;
 }
 
 #CJ {
@@ -303,11 +318,59 @@ input {
   padding: 10px;
 }
 
+#post-body {
+  resize: none;
+  overflow: none;
+  flex-wrap: wrap;
+  height: 100px;
+}
+
+#post-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#post-form {
+  margin-top: 20px;
+  border-bottom: 5px double darkolivegreen;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 50%;
+}
+
 #post-home {
   display: flex;
   text-align-last: center;
   flex-direction: column;
 }
+
+#post-submit {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  width: 50%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#post-topic {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 50%;
+  border: 5px double darkolivegreen;
+  border-radius: 40px;
+  background-color: darkseagreen;
+}
+
+#post-title, #post-body {
+  width: 300px;
+  margin-left: 40px;
+}
+
 
 #recent-comments {
   font-size: 30px;

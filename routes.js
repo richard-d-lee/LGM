@@ -11,6 +11,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/users',
 const bp = require('body-parser')
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
+const formatYmd = date => date.toISOString().slice(0, 10);
 
 const Video = mongoose.model('Video', {
     title: String,
@@ -24,6 +25,7 @@ const Post = mongoose.model('Post', {
     user: String,
     title: String,
     description: String,
+    date: String,
     topic: String,
     upvotes: Number,
     comments: Array,
@@ -73,13 +75,19 @@ module.exports = function (app) {
     app.get('/forumpost', function(req, res) {
 
     })
-    app.get('/forumpost', function(req, res) {
-        let myData = req.body;
-
+    app.post('/forumpost', function(req, res) {
+        Post.create({
+            user: req.body.user,
+            title: req.body.title,
+            description: req.body.description,
+            date: formatYmd(new Date()),
+            topic: req.body.topic,
+            upvotes: 0,
+            comments: [],
+        })
     })
     app.post('/comment', function (req, res) {
         let myData = req.body;
-        const formatYmd = date => date.toISOString().slice(0, 10);
         // Example
         myData.comments = [{
             username: myData.username,

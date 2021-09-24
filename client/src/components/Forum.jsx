@@ -24,18 +24,28 @@ function Forum(props) {
         case 'Bug Reports':
             return (
                 <div id="post-home">
-                    <div>
+                    <div id="post-topic">
                         <h1>
                             {topic}
                         </h1>
                     </div>
-                    <form>
-                        Create a post: &nbsp;
-                        <label>
-                            <input type="text" name="name" />
-                        </label>
-                        <input type="submit" value="Submit" />
+                    <form className="flex-column" id="post-form">
+                        <h2>Create Post</h2>
+                        <div className="flex-row" id="post-field">
+                            <h2>Title</h2>
+                            <label>
+                                <input placeholder="something simple" type="text" name="name" id="post-title" />
+                            </label>
+                        </div>
+                        <div className="flex-row" id="post-field">
+                            <h2>Body</h2>
+                            <label>
+                                <textarea placeholder="maximum 500 characters" id="post-body" />
+                            </label>
+                        </div>
+                        <button type="submit" id="post-submit">Submit</button>
                     </form>
+                    <div className="center" id="civility">Keep it civil!</div>
                 </div>
             )
     }

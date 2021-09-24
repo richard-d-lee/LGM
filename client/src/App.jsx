@@ -18,7 +18,7 @@ class App extends React.Component {
         this.state = {
             username: '',
             page: "home",
-            logged: false,
+            logged: true,
         }
         this.setLogged = this.setLogged.bind(this)
         this.openNav = this.openNav.bind(this);
