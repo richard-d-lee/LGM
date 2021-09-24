@@ -531,12 +531,19 @@ input {
   .all-videos {
     margin-top: 0px;
   }
+  #all-topics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .video {
     border-radius: 30px;
   }
   #forum-home {
-    margin-right: 0px;
-    align-items: flex-start;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    display: flex;
   }
   #forum-topic {
     width: 80%;

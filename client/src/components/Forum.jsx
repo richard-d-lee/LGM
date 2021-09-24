@@ -54,7 +54,7 @@ function Forum(props) {
             <h1>
                 Choose a topic to explore with other users!
             </h1>
-            <div>
+            <div id="all-topics">
                 {topics.map((topic) => {
                     return (
                         <div id="forum-topic">
