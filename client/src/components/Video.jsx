@@ -26,6 +26,14 @@ function Video(props) {
                         </div>
                     </div>
                 )
+            } else {
+                return (
+                    <div id="comment-col">
+                        <div id="recent-comments">
+                            No comments on this video yet! Be the first!
+                        </div>
+                    </div>
+                )
             }
         }
     }
