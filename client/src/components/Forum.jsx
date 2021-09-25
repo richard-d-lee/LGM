@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-let topics = ['Video Games', 'Movies', 'Music', 'Rowscas', 'Lee Gaming', 'Shitposting', 'Bug Reports']
+let topics = ['Video Games', 'Movies', 'Music', 'Rowscas', 'Lee Gaming', 'Shitposting', 'Bug Reports'];
+import axios from 'axios';
 
 function Forum(props) {
+    let postClick = (e) => {
+        //handle post here
+    }
     let chooseTopic = (e) => {
         if (props.logged === true) {
             setTopic(e.target.innerHTML);
