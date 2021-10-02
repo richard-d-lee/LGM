@@ -1,5 +1,11 @@
 const myVideos = [
     {
+        title: "Get Out",
+        url: "https://www.youtube.com/embed/4gVVOCgbqr4",
+        description: "Is Get Out the creepy fun time that it's hyped up to be? Check out Joey's review to find out.",
+        class: "crispy"
+    },
+    {
         title: "1917",
         url: "https://www.youtube.com/embed/oS9ct85aKdI",
         description: "Does the distinct style of this World War One epic pay off? Joey has the answers.",
